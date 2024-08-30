@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# solarvergleich
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a web site that allows price comparaison between articles of solar panels, which are collected from several e-commerce web sites (amazon.de, conrad.de, ...).
 
-## Available Scripts
+## Steps to install the project locally :
 
-In the project directory, you can run:
+1. Clone the repo locally
 
-### `npm start`
+    `git clone https://github.com/MarouaneAyech/solarvergleich.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Go to the project root
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    `cd solarvergleich`
 
-### `npm test`
+3. Install the dependencies (listed in package.json)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    `npm install`
 
-### `npm run build`
+4. Start the dev server (connect to the recat app at http://localhost:3000)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Steps to deploy the project in firebase hosting :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install Firebase CLI
 
-### `npm run eject`
+    `npm install -g firebase-tools`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Log into Firebase
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    `firebase login`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Create a firebase project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    `firebase projects:create solarvergleich --display-name "solarvergleich"`
+`
+4. Init Firebase in the project
 
-## Learn More
+    `firebase init`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Note : Answer to the questions as follows :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    - Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices : Hosting
+    
+    Project setup :
 
-### Code Splitting
+    - Please select an option: Use an existing project
+    - Select a default Firebase project for this directory: solarvergleich
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Hosting Setup
 
-### Analyzing the Bundle Size
+    - What do you want to use as your public directory: build
+    - Configure as a single-page app (rewrite all urls to /index.html): Yes
+    - Set up automatic builds and deploys with GitHub : No
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Build the project (create an optimized production build of the project)
+    
+    `npm run build`
 
-### Making a Progressive Web App
+6. Deploy to the firebase Hosting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    `firebase deploy`
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    -> Hosting URL: https://solarvergleich.web.app
